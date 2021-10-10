@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 //icons
 import { BsSearch } from "react-icons/bs";
 import { IoIosAddCircleOutline } from "react-icons/io";
-import {IoIosArrowBack} from 'react-icons/io'
-import {TiDeleteOutline} from "react-icons/ti"
+import { IoIosArrowBack } from "react-icons/io";
+import { TiDeleteOutline } from "react-icons/ti";
 //css
 import "./bar.css";
 
@@ -23,19 +24,25 @@ const TopBar = () => {
             />
           </div>
           <div className="add-btn">
-            <IoIosAddCircleOutline />
-            <label className="add">Add</label>
+            <Link to="/add-expense">
+              <IoIosAddCircleOutline />
+              <label className="add">Add</label>
+            </Link>
           </div>
         </div>
       ) : (
         <div className="add-expense">
           <div className="add-btn2">
-            <IoIosArrowBack className="back-arrow"/>
-            <label >back</label>
+            <Link to="/">
+              <IoIosArrowBack className="back-arrow" />
+              <label>back</label>
+            </Link>
           </div>
           <div className="add-btn2">
-            <TiDeleteOutline className="back-arrow"/>
-            <label >cansel</label>
+            <Link to="/">
+              <TiDeleteOutline className="back-arrow" />
+              <label>cansel</label>
+            </Link>
           </div>
         </div>
       )}

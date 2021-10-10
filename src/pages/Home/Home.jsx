@@ -1,15 +1,15 @@
 import React from "react";
 //components
-import { TopBar } from "../../components";
+import { TopBar, ExpenseList } from "../../components";
+
 //css
-import './home.css'
+import "./home.css";
 
 export const Home = () => {
   return (
     <section className="home">
       <TopBar />
-      <div>Topfold</div>
-      <div>expenseList</div>
+      <ExpenseList />
     </section>
   );
 };

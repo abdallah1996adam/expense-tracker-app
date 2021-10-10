@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(
+      -36deg,
+      rgb(172, 250, 255) 0%,
+      rgb(217, 186, 63) 100%
+    )
+    fixed;
+  height: 100%;
+  color: rgb(223, 121, 26);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

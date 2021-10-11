@@ -8,7 +8,6 @@ export const deleteExpense = (data) => {
 };
 
 export const addExpense = (data) => {
-  console.log(data);
   return {
     type: ADD_EXPENSE,
     payload: data,

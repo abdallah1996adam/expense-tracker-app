@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { bindActionCreators } from "redux";
-import * as actionCreators from '../../redux/actions-creators/index'
+import * as actionCreators from "../../redux/actions-creators/index";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 //icons
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoPaperPlaneOutline } from "react-icons/io5";
@@ -10,6 +11,9 @@ import { categories } from "../../constants";
 
 //scss
 import "./addform.css";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 export const AddForm = () => {
   const [title, setTitle] = useState("");
@@ -25,6 +29,7 @@ export const AddForm = () => {
     const value = parseFloat(e.target.value);
     if (isNaN(value)) {
       setAmount("");
+    
       return;
     }
     setAmount(value);
@@ -37,7 +42,7 @@ export const AddForm = () => {
 
   const handleSubmit = () => {
     if (amount === "" || title === "" || !category) {
-      console.log("no data");
+      toast.error("please enter valid data");
       return;
     }
     const data = {
@@ -48,7 +53,6 @@ export const AddForm = () => {
     };
     addExpense(data);
   };
-
 
   return (
     <main className="add-form">

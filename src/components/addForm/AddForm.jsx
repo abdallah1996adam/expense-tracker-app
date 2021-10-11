@@ -21,7 +21,7 @@ export const AddForm = () => {
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -54,11 +54,12 @@ export const AddForm = () => {
       creadtedAt: new Date(),
     };
     addExpense(data);
+    setModalOpen(true);
   };
 
   return (
     <main className="add-form">
-      <Modal />
+      <Modal modalOpen={modalOpen} />
       <section className="form-item">
         <label>Title</label>
         <input
@@ -100,7 +101,7 @@ export const AddForm = () => {
           )}
         </div>
       </section>
-      <div className="form-add-btn">
+      <div className="form-add-button">
         <div onClick={handleSubmit}>
           <span>Add</span>
           <IoPaperPlaneOutline />

@@ -15,7 +15,7 @@ export const categories = [
     id: 2,
     title: "Healthcare",
     icon: <RiMentalHealthFill />,
-    color: "00cd00",
+    color: "#00cd00",
   },
   {
     id: 3,

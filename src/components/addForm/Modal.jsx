@@ -5,7 +5,7 @@ import { AiOutlineHome } from "react-icons/ai";
 
 import "./modal.css";
 
-const Modal = () => {
+const Modal = ({ modalOpen }) => {
   const customStyles = {
     content: {
       top: "50%",
@@ -18,7 +18,7 @@ const Modal = () => {
     },
   };
   return (
-    <ReactModal isOpen={true} style={{ customStyles }}>
+    <ReactModal isOpen={modalOpen} style={{ customStyles }}>
       <div className="modal-inner">
         <label>Expense Added Successfully!</label>
         <img

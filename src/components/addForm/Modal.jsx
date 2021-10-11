@@ -1,5 +1,5 @@
 import React from "react";
-import ReactModal from "react-modal";
+import ModalSucces from "react-modal";
 import { Link } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 
@@ -18,7 +18,7 @@ const Modal = ({ modalOpen }) => {
     },
   };
   return (
-    <ReactModal isOpen={modalOpen} style={{ customStyles }}>
+    <ModalSucces isOpen={modalOpen} style={{ customStyles }}>
       <div className="modal-inner">
         <label>Expense Added Successfully!</label>
         <img
@@ -33,7 +33,7 @@ const Modal = ({ modalOpen }) => {
           </div>
         </Link>
       </div>
-    </ReactModal>
+    </ModalSucces>
   );
 };
 

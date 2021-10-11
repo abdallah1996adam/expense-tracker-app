@@ -18,6 +18,7 @@ const TopBar = () => {
           <div className="search-bar">
             <BsSearch className="search-icon" />
             <input
+            className="search-input"
               type="text"
               placeholder="search for expenses"
               onChange={(e) => setSearchValue(e.target.value)}

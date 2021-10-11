@@ -15,7 +15,7 @@
   padding: 0.3rem 0 0 0.6rem;
   cursor: pointer;
 }
-input {
+.search-input {
   width: 100%;
   border-radius: 5rem;
 

@@ -1,13 +1,15 @@
-import React from 'react'
-import { TopBar } from '../../components'
+import React from "react";
+import { AddForm, TopBar } from "../../components";
 
+import "./expense.css";
 
 const AddExpense = () => {
-    return (
-        <div>
-           <TopBar/> 
-        </div>
-    )
-}
+  return (
+    <div className="add-expense">
+      <TopBar />
+      <AddForm />
+    </div>
+  );
+};
 
-export default AddExpense
+export default AddExpense;

@@ -8,6 +8,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoPaperPlaneOutline } from "react-icons/io5";
 
 import { categories } from "../../constants";
+import Modal from "./Modal";
 
 //scss
 import "./addform.css";
@@ -20,6 +21,7 @@ export const AddForm = () => {
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false)
 
   const dispatch = useDispatch();
 
@@ -29,7 +31,7 @@ export const AddForm = () => {
     const value = parseFloat(e.target.value);
     if (isNaN(value)) {
       setAmount("");
-    
+
       return;
     }
     setAmount(value);
@@ -56,6 +58,7 @@ export const AddForm = () => {
 
   return (
     <main className="add-form">
+      <Modal />
       <section className="form-item">
         <label>Title</label>
         <input

@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { bindActionCreators } from "redux";
+import * as actionCreators from '../../redux/actions-creators/index'
+import { useDispatch } from "react-redux";
 //icons
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoPaperPlaneOutline } from "react-icons/io5";
@@ -14,6 +17,10 @@ export const AddForm = () => {
   const [category, setCategory] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
+  const dispatch = useDispatch();
+
+  const { addExpense } = bindActionCreators(actionCreators, dispatch);
+
   const handleAmount = (e) => {
     const value = parseFloat(e.target.value);
     if (isNaN(value)) {
@@ -28,18 +35,21 @@ export const AddForm = () => {
     setIsOpen(false);
   };
 
-  const handleSubmit = ()=>{
-    if(amount===""|| title===""|| !category){
-      console.log('no data');
-      return
+  const handleSubmit = () => {
+    if (amount === "" || title === "" || !category) {
+      console.log("no data");
+      return;
     }
     const data = {
       title,
       category,
       amount,
-      creadtedAt:Date.now()
-    }
-  }
+      creadtedAt: new Date(),
+    };
+    addExpense(data);
+  };
+
+
   return (
     <main className="add-form">
       <section className="form-item">

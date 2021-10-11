@@ -1,4 +1,4 @@
-import { ADD_EXPENSE } from "../action-creators";
+import { ADD_EXPENSE } from "../actions";
 
 const initialState = {
   expenseList: [],

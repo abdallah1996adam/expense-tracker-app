@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 //icons
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { IoPaperPlaneOutline } from "react-icons/io5";
 
 import { categories } from "../../constants";
 
@@ -26,6 +27,19 @@ export const AddForm = () => {
     setCategory(clickedCategory);
     setIsOpen(false);
   };
+
+  const handleSubmit = ()=>{
+    if(amount===""|| title===""|| !category){
+      console.log('no data');
+      return
+    }
+    const data = {
+      title,
+      category,
+      amount,
+      creadtedAt:Date.now()
+    }
+  }
   return (
     <main className="add-form">
       <section className="form-item">
@@ -49,7 +63,7 @@ export const AddForm = () => {
       <section className="category-container">
         <div className="category">
           <div className="category-dropdown" onClick={() => setIsOpen(!isOpen)}>
-            <label>Category</label>
+            <label> {category ? category.title : "Category"}</label>
             <MdKeyboardArrowDown />
           </div>
           {isOpen && (
@@ -62,13 +76,19 @@ export const AddForm = () => {
                   onClick={() => handleCategory(cat)}
                 >
                   <label>{cat.title}</label>
-                  <img src={cat.icon} alt={cat.title} />
+                  <i>{cat.icon}</i>
                 </div>
               ))}
             </div>
           )}
         </div>
       </section>
+      <div className="form-add-btn">
+        <div onClick={handleSubmit}>
+          <span>Add</span>
+          <IoPaperPlaneOutline />
+        </div>
+      </div>
     </main>
   );
 };

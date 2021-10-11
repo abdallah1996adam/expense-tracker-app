@@ -1,7 +1,7 @@
 import { FaGraduationCap } from "react-icons/fa";
 import { RiMentalHealthFill } from "react-icons/ri";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { IoFastFoodOutline } from "react-icons/io";
+import { IoFastFoodOutline } from "react-icons/io5";
 import { BsChatDots } from "react-icons/bs";
 
 export const categories = [

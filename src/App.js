@@ -3,7 +3,7 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 //pages
 import { Home } from "./pages";
 import { AddExpense } from "./pages";
-import { Header, Footer } from "./pages/partials";
+import { Header} from "./pages/partials";
 
 function App() {
   return (
@@ -13,7 +13,6 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/add-expense" component={AddExpense}/>
       </Switch>
-      <Footer />
     </BrowserRouter>
   );
 }
